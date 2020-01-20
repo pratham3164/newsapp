@@ -82,13 +82,7 @@ class Settings extends Component {
           </Text>
           <View style={style.section}>
             <Tile icon="user" title="Username" />
-            {/* <Input
-              type="name"
-              editable={this.state.editable}
-              setVal={this.setVal}
-              setEdit={this.setEdit}
-              val={this.state.name}
-            /> */}
+
             <View
               style={{
                 flexDirection: 'row',
@@ -180,36 +174,6 @@ class Settings extends Component {
               />
             </View>
           </View>
-          {/* 
-          <Input
-            type="mail"
-            editable={this.state.editable}
-            setVal={this.setVal}
-            setEdit={this.setEdit}
-            val={this.state.mail}
-          /> */}
-
-          <Text style={{fontSize: 25, fontWeight: 'bold', margin: 7}}>
-            Preferences
-          </Text>
-          <View style={style.section}>
-            <Tile icon="language" title="Language" />
-            <Tile icon="eye-dropper" title="Theme" />
-
-            <FontAwesome5Icon
-              name="circle"
-              size={25}
-              onPress={() => {
-                console.log('button pressed');
-                this.props.changeColor('red');
-              }}
-              style={{
-                padding: 3,
-                margin: 4,
-                alignSelf: 'center',
-              }}
-            />
-          </View>
         </ScrollView>
       </View>
     );
@@ -267,63 +231,3 @@ function MapStateProps(state) {
 }
 
 export default connect(MapStateProps, {change, changeColor})(Settings);
-
-// class Input extends Component {
-//   state = {
-//     thisname: 'null',
-//   };
-//   render() {
-//     return (
-//       <View
-//         style={{
-//           flexDirection: 'row',
-//           alignContent: 'space-between',
-//         }}>
-//         <TextInput
-//           returnKeyType="done"
-//           placeholder={this.props.type}
-//           onChangeText={name => {
-//             this.props.setVal(this.props.type, name);
-//             this.setState({thisname: name});
-//           }}
-//           value={this.props.val}
-//           editable={this.props.editable}
-//           onBlur={() => {
-//             this.props.setEdit(false);
-//             if (this.props.type == 'name') {
-//               console.log(this.state.thisname);
-
-//               change(this.state.thisname);
-//             }
-//           }}
-//           onSubmitEditing={() => {
-//             this.props.setEdit(false);
-//             if (this.props.type == 'name') change(this.state.thisname);
-//           }}
-//           style={{
-//             flex: 4,
-//             width: 200,
-//             fontSize: 20,
-//             marginLeft: 30,
-//             color: this.props.editable ? 'black' : '#dbdadd',
-//           }}
-//         />
-//         <FontAwesome5Icon
-//           name="pencil-alt"
-//           size={25}
-//           onPress={() => {
-//             this.props.setEdit(true);
-//           }}
-//           style={{
-//             position: 'absolute',
-//             right: 8,
-//             padding: 3,
-//             margin: 4,
-//             alignSelf: 'center',
-//             alignContent: 'center',
-//           }}
-//         />
-//       </View>
-//     );
-//   }
-// }
